@@ -1,0 +1,27 @@
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hidden {
+    -ms-overflow-style: none;  /* For Internet Explorer */
+    scrollbar-width: none; /* For Firefox */
+}
+/* Posts.css */
+
+/* Add this animation for the modal */
+@keyframes modalOpen {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Apply the animation to the modal when it's open */
+  .modal-open {
+    animation: modalOpen 0.3s ease-out forwards;
+  }
+  
