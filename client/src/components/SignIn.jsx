@@ -21,7 +21,7 @@ const Login = () => {
       setIsLoading(true); // Set loading to true when request starts
       try {
         // Send POST request to backend /signin route
-        const response = await fetch("/signin", {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/signin`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
