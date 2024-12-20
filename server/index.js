@@ -13,6 +13,7 @@ import deletePost from "./routes/deletePost.js";
 import likePost from "./routes/likePost.js";
 import addComment from "./routes/addComment.js";
 import viewComment from "./routes/viewComments.js";
+import cors from "cors";
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ const app = express();
 const PORT = process.env.PORT;
 
 connectDB();
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
