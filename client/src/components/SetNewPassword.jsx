@@ -21,7 +21,7 @@ const SetNewPassword = () => {
                 const data = { email, newPassword: password };
 
                 // Send POST request to the backend to update the password
-                const response = await fetch(`/update-password/${otp}`, {
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/update-password/${otp}`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
