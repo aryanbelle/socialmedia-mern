@@ -14,7 +14,7 @@ const PostDetail = () => {
   useEffect(() => {
     const fetchPostData = async () => {
       try {
-        const postResponse = await fetch(`/readpost/${postId}`);
+        const postResponse = await fetch(`${process.env.REACT_APP_BACKEND_URL}/readpost/${postId}`);
         const postData = await postResponse.json();
 
         if (postResponse.ok) {
@@ -35,7 +35,7 @@ const PostDetail = () => {
 
     const fetchComments = async () => {
       try {
-        const commentsResponse = await fetch(`/viewcomment/${postId}`);
+        const commentsResponse = await fetch(`${process.env.REACT_APP_BACKEND_URL}/viewcomment/${postId}`);
         const commentsData = await commentsResponse.json();
 
         if (commentsResponse.ok) {
@@ -71,7 +71,7 @@ const PostDetail = () => {
       const username = localStorage.getItem('username') || "Anonymous";  // Get username from localStorage or fallback to "Anonymous"
 
       try {
-        const response = await fetch(`/addcomment/${postId}`, {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/addcomment/${postId}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -86,7 +86,7 @@ const PostDetail = () => {
         if (response.ok) {
           setCommentText("");
           // Fetch updated comments
-          const updatedComments = await fetch(`/viewcomment/${postId}`);
+          const updatedComments = await fetch(`${process.env.REACT_APP_BACKEND_URL}/viewcomment/${postId}`);
           const data = await updatedComments.json();
           setComments(data || []);
         } else {
