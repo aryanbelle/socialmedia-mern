@@ -19,7 +19,7 @@ const Posts = ({ pfp, username, text, image, isLiked, myUsername, onEdit, onDele
 
       const userId = localStorage.getItem("myusername"); // Replace with the actual user ID logic
 
-      const response = await fetch(`/likepost/${postId}`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/likepost/${postId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
