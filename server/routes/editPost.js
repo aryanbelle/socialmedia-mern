@@ -1,6 +1,6 @@
 // backend/routes/editPost.js
 import express from 'express';
-import Post from '../models/Post.js'; // Assuming the Post model is in 'models/Post.js'
+import Post from '../models/post.js'; // Assuming the Post model is in 'models/Post.js'
 
 const router = express.Router();
 
