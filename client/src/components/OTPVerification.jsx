@@ -35,7 +35,7 @@ const OTPVerification = () => {
 
             try {
                 // Send POST request to the backend for OTP verification
-                const response = await fetch(`/verify/${username}/${otpCode}`, {
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/verify/${username}/${otpCode}`, {
                     method: "POST",
                 });
 
