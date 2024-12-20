@@ -22,7 +22,7 @@ const PORT = process.env.PORT;
 
 connectDB();
 app.use(cors({
-  origin: 'https://socialmedia-mern-78dfoqnsq-aryanbelles-projects.vercel.app/',  // Set your actual frontend URL
+  origin: 'https://socialmedia-mern-7axp.onrender.com', 
   methods: 'GET,POST,PUT,DELETE',
   credentials: true,
 }))
