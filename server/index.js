@@ -21,7 +21,11 @@ const app = express();
 const PORT = process.env.PORT;
 
 connectDB();
-app.use(cors());
+app.use(cors({
+  origin: 'https://socialmedia-mern-78dfoqnsq-aryanbelles-projects.vercel.app/',  // Set your actual frontend URL
+  methods: 'GET,POST,PUT,DELETE',
+  credentials: true,
+}))
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -33,13 +37,13 @@ app.use("/signin", signinRoute);
 app.use("/verify", verifyUserRoute);
 app.use("/forgot-password", forgotPassword);
 app.use("/update-password", updatePassword);
-app.use("/newpost",newPost);
-app.use("/readpost",readPost);
-app.use("/editpost",editPost);
-app.use("/deletepost",deletePost);
-app.use("/likepost",likePost);
-app.use("/addcomment",addComment);
-app.use("/viewcomment",viewComment);
+app.use("/newpost", newPost);
+app.use("/readpost", readPost);
+app.use("/editpost", editPost);
+app.use("/deletepost", deletePost);
+app.use("/likepost", likePost);
+app.use("/addcomment", addComment);
+app.use("/viewcomment", viewComment);
 
 // Handle undefined routes (404)
 app.use((req, res) => {
