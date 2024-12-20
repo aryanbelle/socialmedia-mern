@@ -2,7 +2,7 @@
   "name": "social-media-client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://socialmedia-mern-theta.vercel.app",
+  "proxy": "https://socialmedia-mern-server.vercel.app",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
