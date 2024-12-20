@@ -22,7 +22,7 @@ const PORT = process.env.PORT;
 
 connectDB();
 app.use(cors({
-  origin: 'https://socialmedia-mern-theta.vercel.app', 
+  origin: '*', 
   methods: 'GET,POST,PUT,DELETE',
   credentials: true,
 }))
