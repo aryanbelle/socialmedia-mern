@@ -58,7 +58,7 @@ const MainPage = () => {
 
     if (newCaption) {
       try {
-        const response = await fetch(`/editpost/${postId}`, {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/editpost/${postId}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ const MainPage = () => {
 
   const handleDeletePost = async (postId) => {
     try {
-      const response = await fetch(`/deletepost/${postId}`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/deletepost/${postId}`, {
         method: 'DELETE',
       });
 
@@ -110,7 +110,7 @@ const MainPage = () => {
     setMyUsername(my_user_name);
 
     // Fetch posts from the backend
-    fetch("/readpost")
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/readpost`)
       .then((response) => response.json())
       .then((data) => setPosts(data))
       .catch((error) => console.error("Error fetching posts:", error));
