@@ -21,7 +21,7 @@ const ForgotPWInput = () => {
                 localStorage.setItem("myemail", email);
 
                 // Send POST request to the backend to initiate the password reset
-                const response = await fetch("/forgot-password", {
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/forgot-password`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
