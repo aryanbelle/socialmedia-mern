@@ -26,7 +26,7 @@ const InputPosts = () => {
 
     try {
       // POST request to the backend
-      const response = await fetch("/newpost", {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/newpost`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
