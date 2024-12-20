@@ -26,7 +26,7 @@ const SignUp = () => {
       localStorage.setItem("myusername",username);
 
       try {
-        const response = await fetch("/signup", {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
